@@ -31,7 +31,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.room.Room
 import com.example.contacts_roomdb.ui.theme.Contacts_RoomDBTheme
-import com.example.contacts_roomdb.ui.theme.RoomViewModel
+import com.example.contacts_roomdb.RoomViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

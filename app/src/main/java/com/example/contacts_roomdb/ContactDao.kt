@@ -1,4 +1,4 @@
-package com.example.contacts_roomdb.ui.theme
+package com.example.contacts_roomdb
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

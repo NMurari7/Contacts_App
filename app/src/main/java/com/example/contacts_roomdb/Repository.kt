@@ -1,4 +1,4 @@
-package com.example.contacts_roomdb.ui.theme
+package com.example.contacts_roomdb
 
 import android.util.Log
 import androidx.lifecycle.LiveData

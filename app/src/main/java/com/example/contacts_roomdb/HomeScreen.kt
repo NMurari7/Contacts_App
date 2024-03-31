@@ -42,7 +42,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import com.example.contacts_roomdb.ui.theme.RoomViewModel
+import com.example.contacts_roomdb.RoomViewModel
 
 @Composable
 fun HomeScreen(roomViewModel: RoomViewModel) {
@@ -89,7 +89,8 @@ fun FAButton(openDialog: MutableState<Boolean>){
 
 @Composable
 fun SingleCard(contact: Contact
-               ,viewModel: RoomViewModel)
+               ,viewModel: RoomViewModel
+)
 {
 
     Row(modifier = Modifier
