@@ -7,7 +7,6 @@ import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.contacts_roomdb.Contact
 
 @Database(entities = [Contact::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
@@ -23,13 +22,9 @@ abstract class AppDatabase : RoomDatabase() {
 
                 val instance = Room.databaseBuilder(
                 context.applicationContext,
-                AppDatabase::class.java, "database-name"
+                AppDatabase::class.java, "contactsDB"
             ).build()
-//                val instance = Room.databaseBuilder(
-//                    context.applicationContext,
-//                    AppDatabase::class.java,
-//                    "app_database"
-//                ).build()
+
                 INSTANCE = instance
                 instance
             }
@@ -38,3 +33,5 @@ abstract class AppDatabase : RoomDatabase() {
     }
 }
 
+// Repository
+// viewModel
