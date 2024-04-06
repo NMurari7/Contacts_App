@@ -1,14 +1,11 @@
 package com.example.contacts_roomdb
 
-import android.icu.text.UnicodeSet.CASE
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Upsert
-import com.example.contacts_roomdb.Contact
 
 @Dao
 interface ContactsDao{
@@ -19,18 +16,21 @@ interface ContactsDao{
 
 //    AND
 //    (:newNumber NOT IN (SELECT contactNumber FROM Contact))
-    @Query(""" 
+    @Query(
+        """ 
     UPDATE Contact
     SET 
-    contactName = CASE WHEN contactName = :oldName THEN :newName ELSE contactName END,
-    contactNumber = CASE WHEN contactNumber = :oldNumber THEN :newNumber ELSE contactNumber END
-    WHERE (contactName = :oldName AND contactNumber = :oldNumber)         
-""")
+    cName = CASE WHEN cName = :oldName THEN :newName ELSE cName END,
+    contactNum = CASE WHEN contactNum = :oldNumber THEN :newNumber ELSE contactNum END
+    WHERE (cName = :oldName AND contactNum = :oldNumber) AND (:newNumber NOT IN (SELECT contactNum FROM Contact))        
+"""
+    )
+//    For migration
+//    suspend fun editContact(oldName: String, oldNumber: Long, newName: String, newNumber: Long)
     suspend fun editContact(oldName: String, oldNumber: Long, newName: String, newNumber: Long)
 
-
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun UpsertContact(contact : Contact)
+    suspend fun InsertContact(contact : Contact)
 
     @Delete
     suspend fun DeleteContact(contact: Contact)

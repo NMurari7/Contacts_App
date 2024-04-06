@@ -14,7 +14,7 @@ class RoomRepository(private val contactsDao: ContactsDao) {
 
     suspend fun insertContact(contact: Contact) {
         Log.d("abcd", "Insert function called in repository")
-        contactsDao.UpsertContact(contact)
+        contactsDao.InsertContact(contact)
     }
 
     suspend fun deleteContact(contact: Contact) {

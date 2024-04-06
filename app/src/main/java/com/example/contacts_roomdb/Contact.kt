@@ -6,11 +6,11 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Contact")
 data class Contact(
 
-    val contactName: String,
+    val cName: String,
 
     @PrimaryKey()
-    val contactNumber : Long,
+    val contactNum : Long,
 
-//    val contactEmail : String = ""
-)
+
+    )
 
