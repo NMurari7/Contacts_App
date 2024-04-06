@@ -14,8 +14,6 @@ interface ContactsDao{
     fun getAllContacts() : LiveData<List<Contact>>
 
 
-//    AND
-//    (:newNumber NOT IN (SELECT contactNumber FROM Contact))
     @Query(
         """ 
     UPDATE Contact
@@ -26,7 +24,6 @@ interface ContactsDao{
 """
     )
 //    For migration
-//    suspend fun editContact(oldName: String, oldNumber: Long, newName: String, newNumber: Long)
     suspend fun editContact(oldName: String, oldNumber: Long, newName: String, newNumber: Long)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

@@ -47,6 +47,3 @@ abstract class AppDatabase : RoomDatabase() {
         }
     }
 }
-
-// Repository
-// viewModel
